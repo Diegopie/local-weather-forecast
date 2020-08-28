@@ -3,6 +3,13 @@
     let activeCity;
     // Blank object to contain local storage items
     let recCities = [];
+    let weathData = {
+        temp: "",
+        hum: "",
+        wind: "",
+        lat: "",
+        lon: "",
+    }
 
 
 // * Functions
@@ -29,7 +36,7 @@
             newCity.prepend($('<button>').addClass('btn btn-secondary').text(recCities[i]));
             $('#rec-search').prepend(newCity)
             // console.dir($('#rec-search').children());   
-        }        
+        }       
     }
 
     // Make AJAX Requests
@@ -45,9 +52,13 @@
             method: "GET"
         }) .then (function current(curResponce) {
             console.log(curResponce);
+            weathData.temp = curResponce.main.temp
+            weathData.hum = curResponce.main.humidity
+            weathData.wind = curResponce.wind.speed
+            weathData.lat = curResponce.coord.lat
+            weathData.lon = curResponce.coord.lon
+            console.log(weathData);        
         })
-
-
     }
 
 
