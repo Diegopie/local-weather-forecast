@@ -7,6 +7,7 @@
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" href="./Assets/style.css">
 
     <title>Local Weather - Recieve Current Day and 5 Day Forecasts For US Cities</title>
   </head>
@@ -14,73 +15,82 @@
     <!-- Headiing Container -->
     <header class="jumbotron">
         <section class="row">
-            <h1 class="display-4 col-md-7">Hello, world!</h1>
+            <h1 class="display-3 col-md-7">Weather Forecast</h1>
             <!-- Search Bar -->
             <form class="form-inline my-2 my-lg-0 col-md-5">
                 <input id="user-search" class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-                <button id="search-btn" class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+                <button id="search-btn" class="btn btn-success my-2 my-sm-0" type="submit">Search</button>
             </form>
-        </section>
-        <section>
-            <p class="lead">This is a simple hero unit, a simple jumbotron-style component for calling extra attention to featured content or information.</p>
         </section>
     </header>    
     <!-- Main Content -->
-    <main class="row">
+    <main class="row justify-content-center">
     <!-- Drop Down Recent Searches -->
-        <section class="col-md-3">
+        <section class="col-md-3 justify-content-center">
             <h2>Recent Searches</h2>
             <ul id="rec-search">
             </ul>
         </section>
     <!-- Current Day -->
-        <section class="col-12 col-md-9">
-            <article class="card">
+        <section class="col-12 col-md-8">
+            <article class="card ">
                 <div class="card-header">
-                  Current City
+                  <h2 id='current-city'>Search for a City Get Started
+                    
+                  </h2>
                 </div>
                 <div class="card-body">
-                  <blockquote class="blockquote mb-0">
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</p>
-                    <footer class="blockquote-footer">Someone famous in <cite title="Source Title">Source Title</cite></footer>
-                  </blockquote>
+                    <p>Temperature: <span id="temp"></span></p>
+                    <p>Humidity: <span id="hum"></span></p>
+                    <p>Wind Speed: <span id="wind"></span></p>             
+                    <p>UV Index: <span id="uv"></span></p>
                 </div>
             </article>
         <!-- Five Day Forcast -->
-            <section class="row justify-content-center">
+            <section id="five-day" class="row hidden">
                 <!-- Day 1 -->
-                <article class="card col-auto" style="width: 18rem;">
+                <article class="card col-auto hide" style="width: 18rem;">
                     <div class="card-body">
-                      <h5 class="card-title">Card title</h5>
-                      <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>                    
+                      <h5 class="card-title">Date</h5>
+                      <img>
+                      <p class="card-text">Temperature: </p>                    
+                      <p class="card-text">Humidity: </p>                    
                     </div>
                 </article>
                 <!-- Day 2 -->
                 <article class="card col-auto" style="width: 18rem;">
                     <div class="card-body">
-                      <h5 class="card-title">Card title</h5>
-                      <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>                    
+                      <h5 class="card-title">Date</h5>
+                      <img>
+                      <p class="card-text">Temperature: </p>                    
+                      <p class="card-text">Humidity: </p>                    
                     </div>
                 </article>
                 <!-- Day 3 -->
                 <article class="card col-auto" style="width: 18rem;">
                     <div class="card-body">
-                      <h5 class="card-title">Card title</h5>
-                      <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>                    
+                      <h5 class="card-title">Date</h5>
+                      <img>
+                      <p class="card-text">Temperature: </p>                    
+                      <p class="card-text">Humidity: </p>                    
                     </div>
                 </article>
                 <!-- Day 4 -->
                 <article class="card col-auto" style="width: 18rem;">
                     <div class="card-body">
-                      <h5 class="card-title">Card title</h5>
-                      <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>                    
+                      <h5 class="card-title">Date</h5>
+                      <img>
+                      <p class="card-text">Temperature: </p>                    
+                      <p class="card-text">Humidity: </p>                    
                     </div>
                 </article>
                 <!-- Day 5 -->
                 <article class="card col-auto" style="width: 18rem;">
                     <div class="card-body">
-                      <h5 class="card-title">Card title</h5>
-                      <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>                    
+                      <h5 class="card-title">Date</h5>
+                      <img>
+                      <p class="card-text">Temperature: </p>                    
+                      <p class="card-text">Humidity: </p>                    
                     </div>
                 </article>
             </section>
@@ -94,6 +104,7 @@
     <script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.27.0/moment.min.js" integrity="sha512-rmZcZsyhe0/MAjquhTgiUcb4d9knaFc7b5xAfju483gbEXTkeJRUMIPk6s3ySZMYUHEcjKbjLjyddGWMrNEvZg==" crossorigin="anonymous"></script>
     <script src="Assets/script.js"></script>
   </body>
 </html>
