@@ -1,8 +1,25 @@
-.hidden {
-
-    display: hide!important;
+header {
+    background-color: #232627!important;
+    color: whitesmoke;
 }
 
+body {
+    background-color: #181a1b;
+    color: whitesmoke;
+}
+
+.card-header {
+    background-color: #17191a;
+    /* color: whitesmoke; */
+}
+
+.card-body {
+    background-color: #181a1b;
+}
+
+.card { 
+    background-color: #17191a!important;
+}
 ul {
     list-style-type: none;
 }
@@ -15,6 +32,3 @@ ul {
 .card-body {
     margin-bottom: 25px
 }
-
-
-

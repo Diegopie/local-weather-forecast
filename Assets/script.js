@@ -16,7 +16,6 @@
         icon: "",
     }
 
-
 // * Functions
 
     // ** Checks Local Storage for Data, populates recCities array, and calls renderCities()
@@ -24,7 +23,7 @@
         // Parse Data In Local Storage
         let storedCities = JSON.parse(localStorage.getItem("cities"))
         // Check if Local Storage Was Empty
-                console.log(storedCities);
+                // console.log(storedCities);
         if (storedCities !== null) {
             recCities = storedCities; 
         }
@@ -52,7 +51,7 @@
         // Path to the <ul> and finding the children length
         let checker = $('#rec-search')[0].children.length;
         if (checker >= 11) {
-            console.log("Balls");
+            // console.log("Balls");
             recCities.splice(0,1);
         }
     }
@@ -67,13 +66,10 @@
             url: curWea,
             method: "GET"
         }) .then (function current(curRespon) {
-            console.log(curRespon);
-            console.log(city);
+                    // console.log(curRespon);
+                    // console.log(city);
+            // Run pushCheck() to view
             pushCheck(city, check);
-            // // Add the value of city to recCities array, this prevents users from storing an invalid city
-            // recCities.push(city);
-            // // Send recCities array to local storage
-            // localStorage.setItem('cities', JSON.stringify(recCities));
             // Store data in weathData object
             weathData.temp = Math.floor((curRespon.main.temp - 273.15) * 1.80 + 32);
             weathData.hum = curRespon.main.humidity;
@@ -81,14 +77,14 @@
             weathData.lat = curRespon.coord.lat;
             weathData.lon = curRespon.coord.lon;
             weathData.icon = "http://openweathermap.org/img/wn/" + curRespon.weather[0].icon + "@2x.png"
-            console.log(weathData);
-            // *** Make Ajax request for UV value ^note^ this can be referanced with the onecall API now, this call isnt necessary ^note^
+                    // console.log(weathData);
+            // *** Make Ajax request for UV value ^note^ this can be referenced with the onecall API now, this call isnt necessary ^note^
             $.ajax({
                 url: "https://api.openweathermap.org/data/2.5/uvi?appid=d203ab0e9d06e58c82c3b764c42b7aa7&lat=" + weathData.lat + "&lon=" + weathData.lon,
                 method: "GET"
             }) .then (function (uvRespon){
                 // Store data in weathData object and run updateCurrent()
-                console.log(uvRespon);
+                        // console.log(uvRespon);
                 weathData.uv = uvRespon.value;
                 updateCurrent();
                 // *** Make ajax request for 5 day forecast
@@ -96,7 +92,8 @@
                     url: "https://api.openweathermap.org/data/2.5/onecall?lat=" + weathData.lat + "&lon=" + weathData.lon + "&appid=d203ab0e9d06e58c82c3b764c42b7aa7",
                     method: "GET"
                 }) .then (function(fiResponce) {
-                    console.log(fiResponce);
+                    // call updateFive() and pass through the ajax responce; call renderCities()
+                            // console.log(fiResponce);
                     // Call updatedFive() with the data from the Ajax, call renderCities()
                     updateFive(fiResponce);
                     renderCities();
@@ -107,12 +104,11 @@
 
     // ** Check if City Needs to be added to recCities array
     function pushCheck (city, check) {
+        // If the request was submitted from recent searches button, don't add the city to the DOM
         if (check === 0) {
             return;
-        } else {
-            
-        }
-        // Add the value of city to recCities array, this prevents users from storing an invalid city
+        } 
+        // Add the value of city to recCities array
         recCities.push(city);
         // Send recCities array to local storage
         localStorage.setItem('cities', JSON.stringify(recCities));
@@ -121,9 +117,9 @@
  
     // ** Update Content Day container DOM
     function updateCurrent() {
-        console.dir(document.querySelector('#temp'));
+                // console.dir(document.querySelector('#temp'));
         $('#current-city').html("" + activeCity + ": " + "<span>" + date.format('MMM. Do') + "<span><img src='"+ weathData.icon + "'>" );
-        console.log(weathData.uv);
+                // console.log(weathData.uv);
         $('#temp').text(weathData.temp + " °F");
         $('#hum').text(weathData.hum + "%");
         $('#wind').text(weathData.wind + " MPH");
@@ -131,16 +127,16 @@
     }
     // ** Update Five Day Forceast Containter
     function updateFive(data) {
-        console.log(data);
-        console.dir($('.card-body'));
+                // console.log(data);
+                // console.dir($('.card-body'));
         // Run loop so that each day container is updated with the corresponding data
         for (let i = 1; i < 6; i++) {
             // This variable will store the path to current card to update
             let currCard = $('.card-body')[i].children;                
-                console.log($('.card-body')[i]);
+                // console.log($('.card-body')[i]);
                 // this variable will store the data path to the corresponding day of the current card
                 let currDay = data.daily[i];
-                console.log(currDay);
+                // console.log(currDay);
                 // Reset to the current date
                 date = moment();
                 // Update card DOM with the appropriate data
@@ -160,15 +156,15 @@
         event.preventDefault();
         activeCity = $('#user-search').val().trim();
                 // ^ Test paths and variable         
-                console.log($('#user-search').val());
-                console.log(activeCity);
-                console.log(recCities);        
+                // console.log($('#user-search').val());
+                // console.log(activeCity);
+                // console.log(recCities);        
         weatherRequest(activeCity, 1);   
     });
 
 // * Grab Inner Text from Recent Search Buttons and call weatherRequest()
 $('#rec-search').click(function(event){
-        console.log($(event.target).text());
+        // console.log($(event.target).text());
     activeCity = $(event.target).text();
     weatherRequest(activeCity, 0);
 })
