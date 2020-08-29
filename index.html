@@ -13,18 +13,18 @@
   </head>
   <body>
     <!-- Headiing Container -->
-    <header class="jumbotron">
+    <header class="jumbotron hidden">
         <section class="row">
             <h1 class="display-3 col-md-7">Weather Forecast</h1>
             <!-- Search Bar -->
             <form class="form-inline my-2 my-lg-0 col-md-5">
                 <input id="user-search" class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-                <button id="search-btn" class="btn btn-success my-2 my-sm-0" type="submit">Search</button>
+                <button id="search-btn" class="btn btn-success my-2 my-sm-0 hidden" type="submit">Search</button>
             </form>
         </section>
     </header>    
     <!-- Main Content -->
-    <main class="row justify-content-center">
+    <main class="row justify-content-center hidden">
     <!-- Drop Down Recent Searches -->
         <section class="col-md-3 justify-content-center">
             <h2>Recent Searches</h2>
@@ -32,12 +32,10 @@
             </ul>
         </section>
     <!-- Current Day -->
-        <section class="col-12 col-md-8">
+        <section class="col-12 col-md-8 hidden">
             <article class="card ">
                 <div class="card-header">
-                  <h2 id='current-city'>Search for a City Get Started
-                    
-                  </h2>
+                  <h2 id='current-city'>Search for a City Get Started<h2>
                 </div>
                 <div class="card-body">
                     <p>Temperature: <span id="temp"></span></p>
