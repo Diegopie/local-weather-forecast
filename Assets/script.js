@@ -58,7 +58,7 @@
     }
 
     // ** Make AJAX Requests
-    function weatherRequest(city) {
+    function weatherRequest(city, check) {
         // Create URLs and store in variable
         let curWea = "https://api.openweathermap.org/data/2.5/weather?q=" + city + "&appid=d203ab0e9d06e58c82c3b764c42b7aa7";
         
@@ -69,10 +69,11 @@
         }) .then (function current(curRespon) {
             console.log(curRespon);
             console.log(city);
-            // Add the value of city to recCities array, this prevents users from storing an invalid city
-            recCities.push(city);
-            // Send recCities array to local storage
-            localStorage.setItem('cities', JSON.stringify(recCities));
+            pushCheck(city, check);
+            // // Add the value of city to recCities array, this prevents users from storing an invalid city
+            // recCities.push(city);
+            // // Send recCities array to local storage
+            // localStorage.setItem('cities', JSON.stringify(recCities));
             // Store data in weathData object
             weathData.temp = Math.floor((curRespon.main.temp - 273.15) * 1.80 + 32);
             weathData.hum = curRespon.main.humidity;
@@ -104,6 +105,18 @@
         });       
     }
 
+    // ** Check if City Needs to be added to recCities array
+    function pushCheck (city, check) {
+        if (check === 0) {
+            return;
+        } else {
+            
+        }
+        // Add the value of city to recCities array, this prevents users from storing an invalid city
+        recCities.push(city);
+        // Send recCities array to local storage
+        localStorage.setItem('cities', JSON.stringify(recCities));
+    }
 
  
     // ** Update Content Day container DOM
@@ -150,12 +163,12 @@
                 console.log($('#user-search').val());
                 console.log(activeCity);
                 console.log(recCities);        
-        weatherRequest(activeCity);   
+        weatherRequest(activeCity, 1);   
     });
 
 // * Grab Inner Text from Recent Search Buttons and call weatherRequest()
 $('#rec-search').click(function(event){
         console.log($(event.target).text());
     activeCity = $(event.target).text();
-    weatherRequest(activeCity);
+    weatherRequest(activeCity, 0);
 })
