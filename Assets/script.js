@@ -123,6 +123,7 @@
         $('#temp').text(weathData.temp + " °F");
         $('#hum').text(weathData.hum + "%");
         $('#wind').text(weathData.wind + " MPH");
+        $('#uv').removeClass('yellow red green')
         if (weathData.uv < 3) {
             $('#uv').text(weathData.uv).addClass('green');
         } else if (weathData.uv >= 3 && weathData.uv < 8) {
