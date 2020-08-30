@@ -32,3 +32,15 @@ ul {
 .card-body {
     margin-bottom: 25px
 }
+
+.red {
+    background-color: red;
+}
+
+.yellow {
+    background-color: orange;
+}
+
+.green {
+    background-color: green;
+}

@@ -123,7 +123,14 @@
         $('#temp').text(weathData.temp + " °F");
         $('#hum').text(weathData.hum + "%");
         $('#wind').text(weathData.wind + " MPH");
-        $('#uv').text(weathData.uv);
+        if (weathData.uv < 3) {
+            $('#uv').text(weathData.uv).addClass('green');
+        } else if (weathData.uv >= 3 && weathData.uv < 8) {
+            $('#uv').text(weathData.uv).addClass('yellow');
+        } else if (weathData.uv > 8) {
+            $('#uv').text(weathData.uv).addClass('red');
+        }
+        
     }
     // ** Update Five Day Forceast Containter
     function updateFive(data) {
