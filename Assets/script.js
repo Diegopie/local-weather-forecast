@@ -51,7 +51,7 @@
         // Path to the <ul> and finding the children length
         let checker = $('#rec-search')[0].children.length;
         if (checker >= 11) {
-            // console.log("Balls");
+            // console.log("Noice");
             recCities.splice(0,1);
         }
     }
@@ -133,7 +133,7 @@
         }
         
     }
-    // ** Update Five Day Forceast Containter
+    // ** Update Five Day Forecast Container
     function updateFive(data) {
                 // console.log(data);
                 // console.dir($('.card-body'));

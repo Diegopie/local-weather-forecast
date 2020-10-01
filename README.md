@@ -10,11 +10,11 @@ This weather application was a great way to practice working with APIs. The purp
 - Let users click on the recent search to get that data displayed again, but not have more than 10 items saved in their search history
 
 
-![Work Day Scheduler](./Assets/images/readme-01.gif)
+![Weather Forecast](./Assets/images/readme-01.gif)
 
-[Work Day Scheduler](https://diegopie.github.io/java-script-timed-quiz/) is hosted on GitHub pages. 
+[Weather Forecast](https://diegopie.github.io/java-script-timed-quiz/) is hosted on GitHub pages.
 
-## Outcome: 
+## Outcome:
 
 It took my some time to get APIs wrapped around my head and this project was a great way to get comfortable with them. There are more complexities to APIs that i'd like to explore, and my CSS skills definitely need some polish, but I am happy with the results and am eager to apply what I've learned.
 
