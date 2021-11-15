@@ -2,13 +2,18 @@
 
 This is a weather forecast application that allows users to search any city in the US to find the current temperature, humidity, wind speed, UV index, and 5 day forecast. The application will automatically save a user's 10 recent searches.
 
+## Table of Contents
+
+- [Objective](#Objective)
+- [Outcome](#Outcome)
+- [Collaborators](#Collaborators)
+
 ## Objective
 
 - Build and style a dynamic web page
 - Allow users to search for any US city and be presented with relevant weather information
 - Save the user's search history on the page, but only store valid city names
 - Let users click on the recent search to get that data displayed again, but not have more than 10 items saved in their search history
-
 
 ![Weather Forecast](./Assets/images/readme-01.gif)
 
