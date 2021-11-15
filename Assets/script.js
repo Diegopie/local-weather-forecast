@@ -176,3 +176,13 @@ $('#rec-search').click(function(event){
     activeCity = $(event.target).text();
     weatherRequest(activeCity, 0);
 })
+
+
+$.ajax({
+    url: 'https://randomuser.me/api/',
+    dataType: 'json',
+    success: function(data) {
+      console.log(data);
+    }
+  });
+        

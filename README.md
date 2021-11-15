@@ -1,8 +1,8 @@
 # Weather Forecast
 
-This weather application was a great way to practice working with APIs. The purpose was to update the DOM with relevant weather information based on a user's search.
+This is a weather forecast application that allows users to search any city in the US to find the current temperature, humidity, wind speed, UV index, and 5 day forecast. The application will automatically save a user's 10 recent searches.
 
-## Objective:
+## Objective
 
 - Build and style a dynamic web page
 - Allow users to search for any US city and be presented with relevant weather information
@@ -14,12 +14,11 @@ This weather application was a great way to practice working with APIs. The purp
 
 [Weather Forecast](https://diegopie.github.io/java-script-timed-quiz/) is hosted on GitHub pages.
 
-## Outcome:
+## Outcome
 
-It took my some time to get APIs wrapped around my head and this project was a great way to get comfortable with them. There are more complexities to APIs that i'd like to explore, and my CSS skills definitely need some polish, but I am happy with the results and am eager to apply what I've learned.
+This weather application was a great way to practice working with APIs. It took my some time to get APIs wrapped around my head and this project was a great way to get comfortable with them. There are more complexities to APIs that i'd like to explore, and my CSS skills definitely need some polish, but I am happy with the results and am eager to apply what I've learned.
 
-
-## Collaborators:
+## Collaborators
 
 A very special thank you to the Bootstrap, Moment JS, and OpenWeather teams for making this application possible.
 
