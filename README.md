@@ -6,6 +6,7 @@ This is a weather forecast application that allows users to search any city in t
 
 - [Objective](#Objective)
 - [Outcome](#Outcome)
+- [Technology](#Technology)
 - [Collaborators](#Collaborators)
 
 ## Objective
@@ -15,9 +16,15 @@ This is a weather forecast application that allows users to search any city in t
 - Save the user's search history on the page, but only store valid city names
 - Let users click on the recent search to get that data displayed again, but not have more than 10 items saved in their search history
 
-![Weather Forecast](./Assets/images/readme-01.gif)
+<img src="./Assets/images/readme-01.gif" width="600"/>
 
 [Weather Forecast](https://diegopie.github.io/java-script-timed-quiz/) is hosted on GitHub pages.
+
+## Technology
+
+| | | |
+| ------ | ------ | ------ |
+| [jquery](https://jquery.com/) | [Open Weather API](https://openweathermap.org/api) | [Bootstrap Framework](https://getbootstrap.com/docs/5.0/getting-started/introduction/) |
 
 ## Outcome
 
